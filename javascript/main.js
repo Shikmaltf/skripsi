@@ -81,7 +81,13 @@ document.querySelectorAll('.btnPelajari').forEach(item => {
     });
 });
 
-// deskripsi di card galeri
+document.addEventListener('hidden.bs.modal', function () {
+  document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+  document.body.classList.remove('modal-open');
+  document.body.style = ''; // reset overflow hidden
+});
+
+
 function truncateText(text, wordLimit) {
   const words = text.split(' ');
   if (words.length > wordLimit) {
@@ -89,18 +95,6 @@ function truncateText(text, wordLimit) {
   }
   return text;
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Untuk card dinamis (yang diupload) sudah diproses di fungsi tampilkanArtikel()
-  tampilkanArtikel();
-
-  // Proses semua card statis, misalnya yang sudah ada di index.html
-  document.querySelectorAll('.deskripsi').forEach(function(el) {
-    // Pastikan menggunakan truncateText sesuai kebutuhan (15 kata)
-    el.innerHTML = truncateText(el.innerHTML, 15);
-  });
-});
-
 
 function tampilkanArtikel() {
   let artikel = JSON.parse(localStorage.getItem('artikel') || '[]');
@@ -122,28 +116,40 @@ function tampilkanArtikel() {
       </div>
     `;
   });
-  inisialisasiBtnLihatDetail(); // <-- tambahkan ini
+  inisialisasiBtnLihatDetail();
 }
-window.addEventListener('DOMContentLoaded', tampilkanArtikel);
 
 function inisialisasiBtnLihatDetail() {
   document.querySelectorAll('.btnLihatDetail').forEach(item => {
     item.onclick = function(e) {
       let parent = e.target.closest('.card');
-      let gambar = parent.querySelector('.card-img-top').src;
-      let judul = parent.querySelector('.card-title').innerHTML;
-      let deskripsi = parent.querySelector('.deskripsi').getAttribute('data-full');
+      let gambar = parent.querySelector('.card-img-top')?.src || '';
+      let judul = parent.querySelector('.card-title')?.innerHTML || '';
+      let deskripsi = parent.querySelector('.deskripsi')?.getAttribute('data-full') || '';
 
       let galeriModal = document.getElementById('galeriModal');
       galeriModal.querySelector('.modalTitle').innerHTML = judul;
+      
       let image = document.createElement('img');
       image.src = gambar;
       image.classList.add('w-100');
       galeriModal.querySelector('.modalImage').innerHTML = '';
       galeriModal.querySelector('.modalImage').appendChild(image);
+
       galeriModal.querySelector('.modalDeskripsi').innerHTML = deskripsi;
 
-      
+      var bsModal = new bootstrap.Modal(galeriModal);
+      bsModal.show();
     };
   });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  tampilkanArtikel();
+
+  // Truncate untuk elemen statis (jika ada di HTML)
+  document.querySelectorAll('.deskripsi').forEach(function(el) {
+    el.setAttribute('data-full', el.textContent.trim());
+    el.innerHTML = truncateText(el.innerHTML, 15);
+  });
+});
