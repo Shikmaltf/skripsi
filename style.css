@@ -1,0 +1,48 @@
+/* Font Face */
+@font-face {
+  font-family: "montserrat";
+  src: url("font/Montserrat-Black.woff2") format("woff2");
+  font-weight: 800;
+}
+
+h1 {
+  font-family: "montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+
+.banner {
+    background: url("image/clqq.jpeg") 
+    no-repeat center center;
+    background-size: cover;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    color: #fff;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #057017;
+    border-color: #057017;
+} 
+
+.card-img-top {
+  height: 300px;
+}
+    
+
+.gambar-edukasi {
+  width: 200px;     
+  height: 200px;
+  object-fit: contain;
+}
+
+.crop-img {
+    object-fit: cover;
+}
+
+.kontak img{
+    width:100px;
+    
+}

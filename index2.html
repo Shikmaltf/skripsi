@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAGOLYFE</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+        crossorigin="anonymous"/>
+    <!--  dari template -->
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <!-- coba dari template -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+    <!-- sampai sini -->
+    <script src="https://kit.fontawesome.com/dc2eca11d9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--bagian navigasi-->
+    <nav id="header" class="fixed w-full z-30 top-0 text-white">
+      <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="pl-4 flex items-center">
+          <a class="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
+            <!--Icon from: http://www.potlabicons.com/ -->
+            
+            KSM Watesa Jamaras 02
+          </a>
+        </div>
+        <div class="block lg:hidden pr-4">
+          <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <title>Menu</title>
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+          </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
+          <ul class="list-reset lg:flex justify-end flex-1 items-center">
+            <li class="mr-3">
+              <a class="inline-block py-2 px-4 text-black font-bold no-underline" href="#">Active</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">link</a>
+            </li>
+            <li class="mr-3">
+              <a class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4" href="#">link</a>
+            </li>
+          </ul>
+          <button
+            id="navAction"
+            class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+          >
+            Action
+          </button>
+        </div>
+      </div>
+      <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+    </nav>
+    <!--bagian banner-->
+    <div class="container-fluid banner">
+        <div class="container text-center">
+            <h4 class="display-6">Selamat Datang di MAGOLYFE</h4>
+            <h3 class="display 1">Halo</h3>
+            <a href="#tentang">
+                <button type="button" class="btn btn-primary btn-lg">Tentang KSM Watesa Jamaras 02</button>
+            </a>
+        </div>
+    </div>
+    <!--bagian tentang-->
+    <div class="container-fluid pt-5 pb-5">
+        <div class="container">
+            <h2 class="display-3 text-center" id="tentang">Tentang KSM Watesa Jamaras 02</h2>
+            <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem vero voluptatem libero veritatis harum necessitatibus!</p>
+            <div class="clearfix pt-5">
+                <img src="image/cl4.jpeg" class="col-md-6 float-md-end mb-3 crop-img" width="300" height="300" alt="edukasi"/>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, tenetur. Suscipit, fuga cupiditate? Amet, saepe.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, tenetur. Suscipit, fuga cupiditate? Amet, saepe.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, tenetur. Suscipit, fuga cupiditate? Amet, saepe.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi deleniti ullam, temporibus quas provident animi doloribus quidem cumque. Rem, saepe consectetur ipsam accusamus molestias ratione voluptate architecto nam itaque? Debitis!</p>
+            </div>
+
+        </div>
+    </div>
+    <!--bagian galeri -->
+    <div class="container-fluid pt-5 pb-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-3" id="galeri">Galeri</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo architecto iste ab autem eaque, officia at consequatur fugit debitis magnam odit reiciendis pariatur recusandae est!</p>
+            <div class="row row-cols-md-3 row-cols-2 gx-4 p-4">
+                <div class="col-md-4 mb-5">
+                    <div class="card crop-img">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">Lorem, ipsum.</h5>
+                                <p class="deskripsi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt nostrum molestias veritatis sapiente aut adipisci.</p>
+                                <a class="btn btn-sm btn-primary d-block btnLihatDetail">Lihat Detail</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card crop-img">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">Lorem, ipsum.</h5>
+                                <p class="deskripsi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt nostrum molestias veritatis sapiente aut adipisci.</p>
+                                <a class="btn btn-sm btn-primary d-block btnLihatDetail">Lihat Detail</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card crop-img">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">Lorem, ipsum.</h5>
+                                <p class="deskripsi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt nostrum molestias veritatis sapiente aut adipisci.</p>
+                                <a class="btn btn-sm btn-primary d-block btnLihatDetail">Lihat Detail</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card crop-img">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                           <div class="card-body">
+                                <h5 class="card-title">Lorem, ipsum.</h5>
+                                <p class="deskripsi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt nostrum molestias veritatis sapiente aut adipisci.</p>
+                                <a class="btn btn-sm btn-primary d-block btnLihatDetail">Lihat Detail</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card crop-img">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">Lorem, ipsum.</h5>
+                                <p class="deskripsi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt nostrum molestias veritatis sapiente aut adipisci.</p>
+                                <a class="btn btn-sm btn-primary d-block btnLihatDetail">Lihat Detail</a>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-4 mb-5">
+                    <div class="card crop-img">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h5 class="card-title">Lorem, ipsum.</h5>
+                                <p class="deskripsi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt nostrum molestias veritatis sapiente aut adipisci.</p>
+                                <a class="btn btn-sm btn-primary d-block btnLihatDetail">Lihat Detail</a>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <!-- Di dalam/di bawah bagian galeri -->
+        <div class="row row-cols-md-3 row-cols-2 gx-4 p-4" id="daftarArtikel"></div>
+        </div>
+    </div>
+    <!-- bagian sementara edukasi -->
+    <div class="container-fluid pt-5 pb-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-3" id="edukasi">Edukasi</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo architecto iste ab autem eaque, officia at consequatur fugit debitis magnam odit reiciendis pariatur recusandae est!</p>
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row row-cols-md-3 row-cols-2 gx-4 p-4">
+                            <div class="col-md-12 mb-5">
+                                <div class="card crop-img">
+                                    <img src="image/cl2.jpg" class="card-img-top" alt="Youtube Thumbnail" width="200" height="200">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Lorem, ipsum.</h5>
+                                            <p class="deskripsi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt nostrum molestias veritatis sapiente aut adipisci.</p>
+                                            <a class="btn btn-sm btn-primary btnPelajari" href="#" data-video="https://www.youtube.com/embed/gVuMNSCgFDA?si=qVl-4ielaj29Ouit">Mulai Menonton</a>
+                                        </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                <div class="row row-cols-md-3 row-cols-2 gx-4 p-4">
+                            <div class="col-md-12 mb-5">
+                                <div class="card crop-img">
+                                    <img src="image/cl2.jpg" class="card-img-top" alt="Youtube Thumbnail" width="200" height="200">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Lorem, ipsum.</h5>
+                                            <p class="deskripsi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt nostrum molestias veritatis sapiente aut adipisci.</p>
+                                            <a class="btn btn-sm btn-primary btnPelajari" href="#" data-video="https://www.youtube.com/embed/gVuMNSCgFDA?si=qVl-4ielaj29Ouit">Mulai Menonton</a>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="carousel-item">
+                <div class="row row-cols-md-3 row-cols-2 gx-4 p-4">
+                            <div class="col-md-12 mb-5">
+                                <div class="card crop-img">
+                                    <img src="image/cl2.jpg" class="card-img-top" alt="Youtube Thumbnail" width="200" height="200">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Lorem, ipsum.</h5>
+                                            <p class="deskripsi">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt nostrum molestias veritatis sapiente aut adipisci.</p>
+                                            <a class="btn btn-sm btn-primary btnPelajari" href="#" data-video="https://www.youtube.com/embed/gVuMNSCgFDA?si=qVl-4ielaj29Ouit">Mulai Menonton</a>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+            </div>
+        </div>
+    </div>
+    <!-- produk -->
+    <div class="container-fluid pt-5 pb-5 bg-light">
+        <div class="container text-center">
+            <h2 class="display-3" id="produk">Produk KSM Watesa</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, beatae esse cumque sint delectus dignissimos quibusdam assumenda alias veritatis perferendis quo ipsum aliquam neque nobis.</p>
+            <div class="row row-cols-md-3 row-cols-2 gx-4 p-4">
+                <div class="col-md-3 mb-5">
+                    <div class="card crop-img shadow">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h6 class="card-title">2 Lorem ipsum dolor sit amet.</h6>
+                            </div>
+                            <div class="d-none deskripsi"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Vel veritatis, obcaecati cum quod repellendus, eaque pariatur laboriosam officia, distinctio 
+                            a deserunt. Ad, illo! Voluptatum fugit quidem quos fuga hic autem impedit est ex deserunt qui.</p></div>
+                            <div class="card-footer d-md-flex">
+                                <a class="btn btn-sm btn-primary d-block btnDetail" data-link="https://www.youtube.com/embed/W29O2lhaOEU">Detail</a>
+                                <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp.30.000</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <div class="card crop-img shadow">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h6 class="card-title">2 Lorem ipsum dolor sit amet.</h6>
+                            </div>
+                            <div class="d-none deskripsi"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Vel veritatis, obcaecati cum quod repellendus, eaque pariatur laboriosam officia, distinctio 
+                            a deserunt. Ad, illo! Voluptatum fugit quidem quos fuga hic autem impedit est ex deserunt qui.</p></div>
+                            <div class="card-footer d-md-flex">
+                                <a class="btn btn-sm btn-primary d-block btnDetail" data-link="https://www.youtube.com/embed/gVuMNSCgFDA">Detail</a>
+                                <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp.30.000</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <div class="card crop-img shadow">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h6 class="card-title">3 Lorem ipsum dolor sit amet.</h6>
+                            </div>
+                            <div class="d-none deskripsi"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Vel veritatis, obcaecati cum quod repellendus, eaque pariatur laboriosam officia, distinctio 
+                            a deserunt. Ad, illo! Voluptatum fugit quidem quos fuga hic autem impedit est ex deserunt qui.</p></div>
+                            <div class="card-footer d-md-flex">
+                                <a class="btn btn-sm btn-primary d-block btnDetail" data-link="https://www.youtube.com/embed/R8kAyTsXg3w">Detail</a>
+                                <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp.50.000</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <div class="card crop-img shadow">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h6 class="card-title">4 Lorem ipsum dolor sit amet.</h6>
+                            </div>
+                            <div class="d-none deskripsi"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Vel veritatis, obcaecati cum quod repellendus, eaque pariatur laboriosam officia, distinctio 
+                            a deserunt. Ad, illo! Voluptatum fugit quidem quos fuga hic autem impedit est ex deserunt qui.</p></div>
+                            <div class="card-footer d-md-flex">
+                                <a class="btn btn-sm btn-primary d-block btnDetail" data-link="https://www.youtube.com/embed/d-OBz3kZYKE">Detail</a>
+                                <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp.50.000</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <div class="card crop-img shadow">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h6 class="card-title">5 Lorem ipsum dolor sit amet.</h6>
+                            </div>
+                            <div class="d-none deskripsi"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Vel veritatis, obcaecati cum quod repellendus, eaque pariatur laboriosam officia, distinctio 
+                            a deserunt. Ad, illo! Voluptatum fugit quidem quos fuga hic autem impedit est ex deserunt qui.</p></div>
+                            <div class="card-footer d-md-flex">
+                                <a class="btn btn-sm btn-primary d-block btnDetail" data-link="https://www.youtube.com/embed/KrLiSUNXeHc">Detail</a>
+                                <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp.50.000</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <div class="card crop-img shadow">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h6 class="card-title">6 Lorem ipsum dolor sit amet.</h6>
+                            </div>
+                            <div class="d-none deskripsi"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Vel veritatis, obcaecati cum quod repellendus, eaque pariatur laboriosam officia, distinctio 
+                            a deserunt. Ad, illo! Voluptatum fugit quidem quos fuga hic autem impedit est ex deserunt qui.</p></div>
+                            <div class="card-footer d-md-flex">
+                                <a class="btn btn-sm btn-primary d-block btnDetail">Detail</a>
+                                <span class="ms-auto text-danger fw-bold d-block text-center harga" data-link="https://www.youtube.com/embed/m8PT8kdml0Q">Rp.50.000</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <div class="card crop-img shadow">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h6 class="card-title">7 Lorem ipsum dolor sit amet.</h6>
+                            </div>
+                            <div class="d-none deskripsi"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Vel veritatis, obcaecati cum quod repellendus, eaque pariatur laboriosam officia, distinctio 
+                            a deserunt. Ad, illo! Voluptatum fugit quidem quos fuga hic autem impedit est ex deserunt qui.</p></div>
+                            <div class="card-footer d-md-flex">
+                                <a class="btn btn-sm btn-primary d-block btnDetail" data-link="https://www.youtube.com/embed/SIuKp848L8I">Detail</a>
+                                <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp.50.000</span>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-5">
+                    <div class="card crop-img shadow">
+                        <img src="image/cl3.jpeg" class="card-img-top" alt="gambar" width="200" height="200">
+                            <div class="card-body">
+                                <h6 class="card-title">8 Lorem ipsum dolor sit amet.</h6>
+                            </div>
+                            <div class="d-none deskripsi"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Vel veritatis, obcaecati cum quod repellendus, eaque pariatur laboriosam officia, distinctio 
+                            a deserunt. Ad, illo! Voluptatum fugit quidem quos fuga hic autem impedit est ex deserunt qui.</p></div>
+                            <div class="card-footer d-md-flex">
+                                <a class="btn btn-sm btn-primary d-block btnDetail" data-link="https://www.youtube.com/embed/lCioIb6GLXY">Detail</a>
+                                <span class="ms-auto text-danger fw-bold d-block text-center harga">Rp.50.000</span>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- kontak -->
+    <div class="container-fluid kontak pt-5 pb-5 bg-light">
+        <div class="text-center">
+            <h2 class="display-3" id="kontak"> Kontak Kami:</h2>
+            <div class="row pt-4 gx-4 gy-4">
+                <div class="col-md-4 text-center">
+                    <a href=""><img src="image/wa.png" class="square mb-3" />
+                    <h5>+6288808696069</h5></a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a href="https://maps.app.goo.gl/9vK55gUWU3JN94t86"><img src="image/maps.png" class="square mb-3" />
+                    <h5>Jl. Jamaras III, Jatihandap, Mandalajati, Bandung, Jawa Barat</h5></a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a href="https://www.instagram.com/ksm_watesa_jamaras_02"><img src="image/ig.png" class="square mb-3" />
+                    <h5>@ksm_watesa_jamaras_02</h5></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- pop up detail produk atau Modal -->
+<button type="button" class="btn btn-primary d-none btnModal" data-bs-toggle="modal" 
+data-bs-target="#produkModal">Launch demo modal</button>
+
+<!-- Modal Produk-->
+<div class="modal fade" id="produkModal" tabindex="-1" aria-labelledby="produkModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fs-5 modalTitle" id="produkModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body row">
+        <div class="modalImage col-md-6 col-12"></div>
+        <div class="col-md-6 col-12">
+            <div class="modalDeskripsi"></div>
+            <div class="d-md-flex">
+            <a href="" target="blank" class="btn btn-sm btn-warning d-block btnBeli">Beli Produk</a>
+            <span class="ms-auto text-danger fw-bold d-block text-center modalHarga"></span>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btnLihatPenggunaan">Lihat Cara Penggunaan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- pop up detail produk atau Modal -->
+<button type="button" class="btn btn-primary d-none btnModal" data-bs-toggle="modal" 
+data-bs-target="#galeriModal">Launch demo modal</button>
+
+<!-- Modal galeri -->
+<div class="modal fade" id="galeriModal" tabindex="-1" aria-labelledby="galeriModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fs-5 modalTitle" id="galeriModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body row">
+        <div class="modalImage col-md-6 col-12"></div>
+        <div class="col-md-6 col-12">
+            <div class="modalDeskripsi"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Edukasi -->
+<div class="modal fade" id="edukasiModal" tabindex="-1" aria-labelledby="edukasiModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title fs-5" id="edukasiModalLabel">Video Edukasi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="ratio ratio-16x9">
+          <iframe id="edukasiVideo" src="www.youtube.com/embed/gVuMNSCgFDA?si=qVl-4ielaj29Ouit" title="YouTube video" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    crossorigin="anonymous">
+    </script>
+    <script src="javascript/main.js"></script>
+    <!-- footer -->
+<footer class="bg-dark text-light py-3">
+    <div class="container text-center">
+        <small>&copy; 2025 KSM Watesa Jamaras 02. All rights reserved.</small>
+    </div>
+</footer>
+</body>
+</html>
