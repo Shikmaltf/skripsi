@@ -132,7 +132,8 @@ function inisialisasiBtnLihatDetail() {
       let parent = e.target.closest('.card');
       let gambar = parent.querySelector('.card-img-top').src;
       let judul = parent.querySelector('.card-title').innerHTML;
-      let deskripsi = parent.querySelector('.deskripsi').getAttribute('data-full');
+      let deskripsiEl = parent.querySelector('.deskripsi');
+      let deskripsi = deskripsiEl.getAttribute('data-full') || deskripsiEl.innerHTML;
 
       let galeriModal = document.getElementById('galeriModal');
       galeriModal.querySelector('.modalTitle').innerHTML = judul;
@@ -143,7 +144,7 @@ function inisialisasiBtnLihatDetail() {
       galeriModal.querySelector('.modalImage').appendChild(image);
       galeriModal.querySelector('.modalDeskripsi').innerHTML = deskripsi;
 
-      
+     
     };
   });
 }
