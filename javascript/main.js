@@ -1,11 +1,11 @@
-//produkModal
+// produkModal
 document.querySelectorAll('.btnDetail').forEach(item => {
     item.addEventListener('click', (e) => {
         let parent = e.target.closest('.card');
         let gambar = parent.querySelector('.card-img-top').src;
         let harga = parent.querySelector('.harga').innerHTML;
         let judul = parent.querySelector('.card-title').innerHTML;
-        let deskripsi = parent.querySelector('.deskripsi').innerHTML;
+        let deskripsi = parent.querySelector('.deskripsi').getAttribute('data-full');
 
         let produkModal = document.getElementById('produkModal');
         produkModal.querySelector('.modalTitle').innerHTML = judul;
@@ -21,7 +21,6 @@ document.querySelectorAll('.btnDetail').forEach(item => {
         let pesan = `https://api.whatsapp.com/send?phone=${nohp}&text=Halo, saya mau pesan produk ini ${judul}`;
         produkModal.querySelector('.btnBeli').href = pesan;
 
-        // Ambil link dari data-link tombol Detail
         let linkPenggunaan = e.target.getAttribute('data-link');
         let btnPenggunaan = produkModal.querySelector('.btnLihatPenggunaan');
         if (btnPenggunaan && linkPenggunaan) {
@@ -35,17 +34,14 @@ document.querySelectorAll('.btnDetail').forEach(item => {
     });
 });
 
-
-// galeriModal
+// galeriModal (statis)
 document.querySelectorAll('.btnLihatDetail').forEach(item => {
     item.addEventListener('click', (e) => {
         let parent = e.target.closest('.card');
-
         let gambar = parent.querySelector('.card-img-top').src;
         let judul = parent.querySelector('.card-title').innerHTML;
-        let deskripsi = parent.querySelector('.deskripsi').innerHTML;
+        let deskripsi = parent.querySelector('.deskripsi').getAttribute('data-full');
 
-        // Isi konten modal galeri
         let galeriModal = document.getElementById('galeriModal');
         galeriModal.querySelector('.modalTitle').innerHTML = judul;
         let image = document.createElement('img');
@@ -55,39 +51,39 @@ document.querySelectorAll('.btnLihatDetail').forEach(item => {
         galeriModal.querySelector('.modalImage').appendChild(image);
         galeriModal.querySelector('.modalDeskripsi').innerHTML = deskripsi;
 
-        // Tampilkan modal galeri secara langsung
         var bsModal = new bootstrap.Modal(galeriModal);
         bsModal.show();
     });
 });
 
-
 // modal edukasi
+const edukasiModal = document.getElementById('edukasiModal');
+const edukasiIframe = edukasiModal.querySelector('#edukasiVideo');
+
 document.querySelectorAll('.btnPelajari').forEach(item => {
     item.addEventListener('click', function(e) {
         e.preventDefault();
         const videoUrl = item.getAttribute('data-video');
-        const modal = document.getElementById('edukasiModal');
-        const iframe = modal.querySelector('#edukasiVideo');
-        iframe.src = videoUrl;
+        edukasiIframe.src = videoUrl;
 
-        var bsModal = new bootstrap.Modal(modal);
+        var bsModal = new bootstrap.Modal(edukasiModal);
         bsModal.show();
-
-        // Bersihkan video saat modal ditutup
-        modal.addEventListener('hidden.bs.modal', function () {
-            iframe.src = "www.youtube.com/embed/gVuMNSCgFDA?si=qVl-4ielaj29Ouit";
-        }, { once: true });
     });
 });
 
-document.addEventListener('hidden.bs.modal', function () {
-  document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
-  document.body.classList.remove('modal-open');
-  document.body.style = ''; // reset overflow hidden
+// Kosongkan video saat modal edukasi ditutup
+edukasiModal.addEventListener('hidden.bs.modal', function () {
+    edukasiIframe.src = '';
 });
 
+// Cegah backdrop error
+document.addEventListener('hidden.bs.modal', function () {
+    document.querySelectorAll('.modal-backdrop').forEach(el => el.remove());
+    document.body.classList.remove('modal-open');
+    document.body.style = ''; // reset overflow hidden
+});
 
+// truncate function
 function truncateText(text, wordLimit) {
   const words = text.split(' ');
   if (words.length > wordLimit) {
@@ -129,13 +125,11 @@ function inisialisasiBtnLihatDetail() {
 
       let galeriModal = document.getElementById('galeriModal');
       galeriModal.querySelector('.modalTitle').innerHTML = judul;
-      
       let image = document.createElement('img');
       image.src = gambar;
       image.classList.add('w-100');
       galeriModal.querySelector('.modalImage').innerHTML = '';
       galeriModal.querySelector('.modalImage').appendChild(image);
-
       galeriModal.querySelector('.modalDeskripsi').innerHTML = deskripsi;
 
       var bsModal = new bootstrap.Modal(galeriModal);
@@ -144,12 +138,13 @@ function inisialisasiBtnLihatDetail() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   tampilkanArtikel();
-
-  // Truncate untuk elemen statis (jika ada di HTML)
-  document.querySelectorAll('.deskripsi').forEach(function(el) {
-    el.setAttribute('data-full', el.textContent.trim());
-    el.innerHTML = truncateText(el.innerHTML, 15);
+  
+  document.querySelectorAll('.deskripsi').forEach(function (el) {
+    if (!el.getAttribute('data-full')) {
+      el.setAttribute('data-full', el.textContent.trim());
+      el.innerHTML = truncateText(el.textContent.trim(), 15);
+    }
   });
 });
