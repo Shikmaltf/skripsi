@@ -79,3 +79,24 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 });
 
+//coba navbar interaktif
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var header = document.getElementById("header");
+  var navcontent = document.getElementById("nav-content");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 10) {
+      header.classList.add("bg-white", "shadow");
+      header.classList.remove("navbar-dark", "bg-dark");
+      header.classList.add("navbar-light");
+      navcontent.classList.add("bg-white");
+      navcontent.classList.remove("bg-dark");
+    } else {
+      header.classList.remove("bg-white", "shadow", "navbar-light");
+      header.classList.add("navbar-dark", "bg-dark");
+      navcontent.classList.remove("bg-white");
+      navcontent.classList.add("bg-dark");
+    }
+  });
+});
+</script>
