@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //coba navbar interaktif
-<script>
+
 document.addEventListener("DOMContentLoaded", function () {
   var header = document.getElementById("header");
   var navcontent = document.getElementById("nav-content");
@@ -99,4 +99,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-</script>
