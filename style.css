@@ -24,11 +24,16 @@ h1 {
     color: #fff;
 }
 
-.btn-primary {
+.btn-outline-secondary {
+    color: #153a1b;
+    border-color: #153a1b;
+}
+
+.btn-secondary {
     color: #fff;
     background-color: #057017;
     border-color: #057017;
-} 
+}   
 
 .card-img-top {
   height: 300px;

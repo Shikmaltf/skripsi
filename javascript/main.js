@@ -104,7 +104,7 @@ function tampilkanArtikel() {
           ${a.gambar ? `<img src="${a.gambar}" class="card-img-top" alt="Gambar Artikel">` : ''}
           <div class="card-body">
             <h5 class="card-title">${a.judul}</h5>
-            <p class="deskripsi" data-full="${a.isi}">${truncateText(a.isi, 15)}</p>
+            <p class="deskripsi" data-full="${a.isi}">${truncateText(a.isi, 3)}</p>
             <p class="text-muted" style="font-size:12px">${new Date(a.tanggal).toLocaleString()}</p>
             <a class="btn btn-sm btn-primary d-block btnLihatDetail">Lihat Detail</a>
           </div>
@@ -144,9 +144,8 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('.deskripsi').forEach(function (el) {
     if (!el.getAttribute('data-full')) {
       el.setAttribute('data-full', el.textContent.trim());
-      el.innerHTML = truncateText(el.textContent.trim(), 15);
+      el.innerHTML = truncateText(el.textContent.trim(), 3);
     }
   });
 });
 
-//coba navbar interaktif
