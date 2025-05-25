@@ -17,10 +17,6 @@ document.querySelectorAll('.btnDetail').forEach(item => {
         produkModal.querySelector('.modalDeskripsi').innerHTML = deskripsi;
         produkModal.querySelector('.modalHarga').innerHTML = harga;
 
-        const nohp = '6288210397399';
-        let pesan = `https://api.whatsapp.com/send?phone=${nohp}&text=Halo, saya mau pesan produk ini ${judul}`;
-        produkModal.querySelector('.btnBeli').href = pesan;
-
         let linkPenggunaan = e.target.getAttribute('data-link');
         let btnPenggunaan = produkModal.querySelector('.btnLihatPenggunaan');
         if (btnPenggunaan && linkPenggunaan) {
@@ -28,6 +24,10 @@ document.querySelectorAll('.btnDetail').forEach(item => {
                 window.open(linkPenggunaan, '_blank');
             };
         }
+        
+        const nohp = '6288210397399';
+        let pesan = `https://api.whatsapp.com/send?phone=${nohp}&text=Halo, saya mau pesan produk ini ${judul}`;
+        produkModal.querySelector('.btnBeli').href = pesan;
 
         var bsModal = new bootstrap.Modal(produkModal);
         bsModal.show();
